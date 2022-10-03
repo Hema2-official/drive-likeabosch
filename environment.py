@@ -56,7 +56,7 @@ class Environment():
         # process radar objects
         radar_objs = obj_array.rad_a_objects + obj_array.rad_b_objects + obj_array.rad_c_objects + obj_array.rad_d_objects
         for obj in radar_objs:
-            if (obj.dx < 1 and obj.dy < 1) or 3.5 > obj.dx > 3:
+            if (-0.8 < obj.dx < 0.8 and -0.8 < obj.dy < 0.8) or 3.5 > obj.dx > 3:
                 continue
             if not self.process_nearby(self.objects, obj) and not self.process_nearby(self.temporary_objects, obj):
                 self.temporary_objects.append(obj)
